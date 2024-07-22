@@ -34,7 +34,6 @@ class Crafty():
             }
         
         url = f'http{"s" if self.ssl else ""}://{self.host}:{self.port}/api/v2{path if path.startswith("/") else "/" + str(path)}'
-        print(url)
         try:
             req = requests.request(method=method, url=url, headers=headers, json=data)
             if req.json().get("status") == "ok":
